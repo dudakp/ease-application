@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>ease-application</artifactId>
+        <groupId>sk.fei.tp</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>ease</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ease</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>17</java.version>
+        <okta.sdk.version>6.0.0</okta.sdk.version>
+        <okta.commons.version>1.2.8</okta.commons.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>sk.fei.tp</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>sk.fei.tp</groupId>
+            <artifactId>user</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- monitoring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.0.0</version>
+                <configuration>
+                    <url>${env.POSTGRES_URL}/${env.POSTGRES_DB}</url>
+                    <user>${env.POSTGRES_USER}</user>
+                    <password>${env.POSTGRES_PWD}</password>
+                    <schemas>
+                        <schema>${env.POSTGRES_DB}</schema>
+                    </schemas>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
