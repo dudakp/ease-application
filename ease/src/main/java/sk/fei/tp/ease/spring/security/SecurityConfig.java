@@ -6,19 +6,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    //    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests(authorizeRequests ->
-//                        authorizeRequests
-//                                .antMatchers("/actuator/**").permitAll()
-//                                .anyRequest().authenticated())
-//                .csrf().disable();
-//    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests(authorizeRequests -> authorizeRequests
                         .antMatchers("/actuator/**").permitAll()
-                        .anyRequest().authenticated())
+                        .antMatchers("/api-docs/**", "/swagger/**").permitAll()
+                        .anyRequest().authenticated()
+                )
                 .oauth2ResourceServer().jwt();
     }
 }

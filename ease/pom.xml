@@ -15,6 +15,7 @@
         <java.version>17</java.version>
         <okta.sdk.version>6.0.0</okta.sdk.version>
         <okta.commons.version>1.2.8</okta.commons.version>
+        <springdoc.version>1.5.2</springdoc.version>
     </properties>
 
     <dependencies>
@@ -37,7 +38,14 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
+        <!-- openapi -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

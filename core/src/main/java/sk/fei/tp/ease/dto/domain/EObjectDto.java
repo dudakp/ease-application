@@ -8,6 +8,7 @@ public record EObjectDto(
         String name,
         String alias,
         String author,
-        Integer version
+        Integer version,
+        EPackageDto ePackage
 ) {
 }
