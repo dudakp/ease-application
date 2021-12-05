@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './ease/.mvnw spring-boot:build-image'
+                sh 'cd ease && mvn spring-boot:build-image'
             }
         }
         stage('Run docker image') {
