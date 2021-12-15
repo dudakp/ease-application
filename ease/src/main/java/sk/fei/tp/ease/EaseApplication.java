@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 
 @SpringBootApplication
-@EnableNeo4jRepositories
+//@EnableNeo4jRepositories
 public class EaseApplication {
 
     public static void main(String[] args) {

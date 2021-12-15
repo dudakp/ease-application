@@ -15,8 +15,8 @@
         <module>user</module>
     </modules>
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <spring.boot.version>2.6.1</spring.boot.version>
         <flyaway.version>8.0.0</flyaway.version>
         <postgre.version>42.2.23</postgre.version>
