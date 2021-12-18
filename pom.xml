@@ -24,6 +24,7 @@
         <jackson.version>2.12.4</jackson.version>
         <swagger.version>2.1.6</swagger.version>
         <dozer.version>5.5.1</dozer.version>
+        <springdoc.version>1.5.2</springdoc.version>
     </properties>
 
     <parent>
@@ -92,6 +93,12 @@
             <groupId>net.sf.dozer</groupId>
             <artifactId>dozer</artifactId>
             <version>${dozer.version}</version>
+        </dependency>
+        <!-- openapi -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
         <!-- test -->
         <dependency>

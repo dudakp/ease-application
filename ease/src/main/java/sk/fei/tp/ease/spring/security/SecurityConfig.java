@@ -10,10 +10,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests(authorizeRequests -> authorizeRequests
-                        .antMatchers("/actuator/**").permitAll()
-                        .antMatchers("/api-docs/**", "/swagger/**").permitAll()
-                        .anyRequest().authenticated()
-                )
+                .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/v3/**", "/api-docs/**", "/swagger/**").permitAll()
+                .anyRequest().authenticated()
+        )
                 .oauth2ResourceServer().jwt();
     }
 }
