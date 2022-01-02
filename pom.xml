@@ -94,7 +94,6 @@
             <artifactId>dozer</artifactId>
             <version>${dozer.version}</version>
         </dependency>
-        <!-- openapi -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
