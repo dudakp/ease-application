@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker stop ease-application
 docker rm ease-application
 docker build -t ease/application .
