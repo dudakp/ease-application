@@ -2,6 +2,7 @@ package sk.fei.tp.ease.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.dozer.DozerBeanMapper;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import sk.fei.tp.ease.dto.domain.search.GeneralSearchResultDto;
 import sk.fei.tp.ease.dto.request.SearchRequestDto;
@@ -20,8 +21,9 @@ public class GeneralSearchService implements IGeneralSearchService {
 
     @Override
     public List<GeneralSearchResultDto> searchEntities(SearchRequestDto searchRequest) {
-        return searchRepository.findByNameContainingIgnoreCase(searchRequest.getName()).stream()
-                .map(r->mapper.map(r, GeneralSearchResultDto.class))
+        return searchRepository.findByNameContainingIgnoreCase(searchRequest.getName(),
+                        PageRequest.of(searchRequest.getPage(), searchRequest.getPageSize())).stream()
+                .map(r -> mapper.map(r, GeneralSearchResultDto.class))
                 .collect(Collectors.toList());
     }
 }

@@ -9,5 +9,6 @@ public final class GeneralSearchResultDto {
     private EntityType type;
     private String name;
     private Long packageId;
+    private String detailedType;
 
 }

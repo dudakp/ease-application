@@ -30,4 +30,6 @@ public class EntitySearchView {
     @Column(name = "package")
     Long packageId;
 
+    @Column(name = "detailedtype")
+    String detailedType;
 }
