@@ -1,14 +1,12 @@
 package sk.fei.tp.ease.rest;
 
-import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sk.fei.tp.ease.dto.domain.EObjectDto;
+import sk.fei.tp.ease.dto.domain.EObjectWithPackageDto;
 import sk.fei.tp.ease.service.IObjectService;
-
-import javax.websocket.server.PathParam;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,8 +17,8 @@ public class ObjectController {
 
 
     @GetMapping("/{id}")
-    @Operation(description = "ano")
-    public EObjectDto getObject(@PathParam("id") Long id) {
+    public EObjectWithPackageDto getObject(@PathVariable("id") Long id) {
         return this.objectService.find(id);
     }
+
 }

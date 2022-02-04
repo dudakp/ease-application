@@ -8,7 +8,6 @@ import java.util.List;
 public final class EDiagramDto {
     private Long id;
     private EPackageDto tPackage;
-    private List<EObjectDto> objects;
     private String name;
     private String author;
     private Integer version;

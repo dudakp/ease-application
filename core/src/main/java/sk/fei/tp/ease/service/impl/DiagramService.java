@@ -6,6 +6,7 @@ import org.hibernate.ObjectNotFoundException;
 import org.springframework.stereotype.Service;
 import sk.fei.tp.ease.dto.domain.EDiagramDto;
 import sk.fei.tp.ease.dto.domain.EObjectDto;
+import sk.fei.tp.ease.dto.domain.EObjectWithPackageDto;
 import sk.fei.tp.ease.repository.EDiagramRepository;
 import sk.fei.tp.ease.service.IDiagramService;
 

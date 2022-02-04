@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.dozer.DozerBeanMapper;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.stereotype.Service;
-import sk.fei.tp.ease.dto.domain.EObjectDto;
+import sk.fei.tp.ease.dto.domain.EObjectWithPackageDto;
 import sk.fei.tp.ease.repository.EObjectRepository;
 import sk.fei.tp.ease.service.IObjectService;
 
@@ -16,9 +16,9 @@ public class ObjectService implements IObjectService {
     private final DozerBeanMapper mapper;
 
     @Override
-    public EObjectDto find(Long id) {
+    public EObjectWithPackageDto find(Long id) {
         return objectRepository.findById(id)
-                .map(eObject -> mapper.map(eObject, EObjectDto.class))
-                .orElseThrow(() -> new ObjectNotFoundException(id, EObjectDto.class.getSimpleName()));
+                .map(eObject -> mapper.map(eObject, EObjectWithPackageDto.class))
+                .orElseThrow(() -> new ObjectNotFoundException(id, EObjectWithPackageDto.class.getSimpleName()));
     }
 }
