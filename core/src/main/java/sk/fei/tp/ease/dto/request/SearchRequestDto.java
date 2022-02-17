@@ -7,6 +7,7 @@ import sk.fei.tp.ease.dto.domain.search.EntityType;
 import sk.fei.tp.ease.model.enums.DiagramType;
 import sk.fei.tp.ease.model.enums.ObjectType;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -21,6 +22,7 @@ public final class SearchRequestDto {
     @Nullable
     private DiagramType diagramDetailedTypeFilter;
 
+    @Valid
     private PagingFilter pagingFilter;
 
 }

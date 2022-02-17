@@ -12,6 +12,8 @@ import sk.fei.tp.ease.dto.domain.search.GeneralSearchResultDto;
 import sk.fei.tp.ease.dto.request.SearchRequestDto;
 import sk.fei.tp.ease.service.IGeneralSearchService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/core/search")
 @RequiredArgsConstructor
@@ -20,7 +22,7 @@ public class GeneralSearchController {
     private final IGeneralSearchService generalSearchService;
 
     @PutMapping(path = "/general")
-    public PagedResult<GeneralSearchResultDto> searchGeneralEntity(@RequestBody SearchRequestDto search) {
+    public PagedResult<GeneralSearchResultDto> searchGeneralEntity(@Valid @RequestBody SearchRequestDto search) {
         return this.generalSearchService.searchEntities(search);
     }
 
