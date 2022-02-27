@@ -1,11 +1,11 @@
 package sk.fei.tp.ease.rest;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import sk.fei.tp.ease.dto.SearchHistoryDto;
 import sk.fei.tp.ease.service.ISearchHistoryService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/user/searchHistory")
@@ -17,4 +17,10 @@ public class SearchHistoryController {
     public void createSearchHistoryEntry(@RequestParam String query){
         searchHistoryService.createHistoryEntry(query);
     }
+
+    @PutMapping(path = "/general")
+    public List<SearchHistoryDto> searchHistory(@RequestParam String user){
+        return searchHistoryService.searchHistory(user);
+    }
 }
+
