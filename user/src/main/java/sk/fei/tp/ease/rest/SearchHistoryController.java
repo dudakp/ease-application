@@ -3,6 +3,7 @@ package sk.fei.tp.ease.rest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import sk.fei.tp.ease.dto.SearchHistoryDto;
+import sk.fei.tp.ease.dto.common.PagedResult;
 import sk.fei.tp.ease.service.ISearchHistoryService;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class SearchHistoryController {
     }
 
     @PutMapping(path = "/general")
-    public List<SearchHistoryDto> searchHistory(@RequestParam String user){
+    public PagedResult<SearchHistoryDto> searchHistory(@RequestParam String user){
         return searchHistoryService.searchHistory(user);
     }
 }
