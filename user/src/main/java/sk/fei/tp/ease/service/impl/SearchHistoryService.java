@@ -32,8 +32,8 @@ public class SearchHistoryService implements ISearchHistoryService {
     }
 
     @Override
-    public PagedResult<SearchHistoryDto> searchHistory(String user) {
-        Page<SearchHistory> byUser = searchHistoryRepository.findByUser(user, PageRequest.of(0, 10));
+    public PagedResult<SearchHistoryDto> searchHistory(Integer page, Integer pageSize) {
+        Page<SearchHistory> byUser = searchHistoryRepository.findByUser(UserUtils.getCurrentUser(), PageRequest.of(page, pageSize));
 
         return new PagedResult<>(byUser.getContent().stream()
                 .map(e -> mapper.map(e, SearchHistoryDto.class))

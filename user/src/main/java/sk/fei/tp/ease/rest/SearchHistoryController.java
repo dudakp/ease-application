@@ -6,8 +6,6 @@ import sk.fei.tp.ease.dto.SearchHistoryDto;
 import sk.fei.tp.ease.dto.common.PagedResult;
 import sk.fei.tp.ease.service.ISearchHistoryService;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/user/searchHistory")
 @RequiredArgsConstructor
@@ -19,9 +17,9 @@ public class SearchHistoryController {
         searchHistoryService.createHistoryEntry(query);
     }
 
-    @PutMapping(path = "/general")
-    public PagedResult<SearchHistoryDto> searchHistory(@RequestParam String user){
-        return searchHistoryService.searchHistory(user);
+    @GetMapping
+    public PagedResult<SearchHistoryDto> searchHistory(@RequestParam Integer page, @RequestParam Integer pageSize){
+        return searchHistoryService.searchHistory(page, pageSize);
     }
 }
 

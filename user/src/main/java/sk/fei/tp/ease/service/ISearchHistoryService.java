@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ISearchHistoryService {
     void createHistoryEntry(String query);
-    PagedResult<SearchHistoryDto> searchHistory(String user);
+    PagedResult<SearchHistoryDto> searchHistory(Integer page, Integer pageSize);
 }

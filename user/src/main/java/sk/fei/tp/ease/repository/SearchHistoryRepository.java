@@ -5,10 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
-import sk.fei.tp.ease.dto.SearchHistoryDto;
 import sk.fei.tp.ease.model.SearchHistory;
-
-import java.util.List;
 
 public interface SearchHistoryRepository extends PagingAndSortingRepository <SearchHistory, Long> {
 
