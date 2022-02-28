@@ -18,7 +18,7 @@ public class SearchHistoryController {
     }
 
     @GetMapping
-    public PagedResult<SearchHistoryDto> searchHistory(@RequestParam Integer page, @RequestParam Integer pageSize){
+    public PagedResult<SearchHistoryDto> searchHistory(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "10") Integer pageSize){
         return searchHistoryService.searchHistory(page, pageSize);
     }
 }
