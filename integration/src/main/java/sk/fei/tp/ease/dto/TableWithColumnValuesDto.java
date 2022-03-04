@@ -1,5 +1,6 @@
 package sk.fei.tp.ease.dto;
 
+
 import lombok.Data;
 import sk.fei.tp.ease.dto.xml.XmlColumnWrapper;
 import sk.fei.tp.ease.dto.xml.XmlRowWrapper;

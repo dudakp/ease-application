@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import sk.fei.tp.ease.dto.req.XmlDataImportResponseDto;
 import sk.fei.tp.ease.service.IDataImportService;
 
 @RestController
@@ -16,7 +17,7 @@ public class DataUploadController {
     private final IDataImportService dataImportService;
 
     @PostMapping("/uploadSingle")
-    public Object uploadFile(@RequestParam("file") MultipartFile file) {
+    public XmlDataImportResponseDto uploadFile(@RequestParam("file") MultipartFile file) {
         return dataImportService.importSingleFile(file);
     }
 }
