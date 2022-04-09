@@ -17,5 +17,5 @@ public class EObjectDto {
     private Set<Long> diagrams;
     private EObjectWithPackageDto parent;
     private String note;
-    private List<Object> taggedValues;
+    private List<Object> objectProperties;
 }

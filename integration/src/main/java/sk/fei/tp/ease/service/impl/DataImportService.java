@@ -10,6 +10,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import sk.fei.tp.ease.dto.TableWithColumnValuesDto;
 import sk.fei.tp.ease.dto.req.XmlDataImportResponseDto;
+import sk.fei.tp.ease.exception.BusinessException;
 import sk.fei.tp.ease.helper.EaDataImportUnmarshallerHelper;
 import sk.fei.tp.ease.service.IDataImportService;
 
@@ -58,7 +59,7 @@ public class DataImportService implements IDataImportService {
             log.info("Imported {} rows to DB", numImportedRows);
             return new XmlDataImportResponseDto(numImportedRows.get(), queries.size());
         } catch (JAXBException | IOException e) {
-            throw new RuntimeException("unable to unmarshall provided file!");
+            throw new BusinessException("BAD_FILE_FORMAT");
         }
 
     }

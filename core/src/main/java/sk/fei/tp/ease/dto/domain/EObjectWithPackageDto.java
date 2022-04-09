@@ -9,6 +9,6 @@ import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class EObjectWithPackageDto extends EObjectDto{
+public class EObjectWithPackageDto extends EObjectDto {
     private EPackageDto ePackage;
 }
