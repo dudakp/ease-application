@@ -1,6 +1,7 @@
 package sk.fei.tp.ease.dto.domain;
 
 import lombok.Data;
+import sk.fei.tp.ease.model.EObjectProperty;
 import sk.fei.tp.ease.model.enums.ObjectType;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public class EObjectDto {
     private Set<Long> diagrams;
     private EObjectWithPackageDto parent;
     private String note;
-    private List<Object> objectProperties;
+    private List<EObjectPropertyDto> objectProperties;
 }

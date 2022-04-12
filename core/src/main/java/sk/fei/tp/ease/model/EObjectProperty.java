@@ -17,7 +17,7 @@ public class EObjectProperty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "PropertyID", nullable = false)
-    private int propertyId;
+    private Long propertyId;
 
     @Column(name = "Property")
     private String property;

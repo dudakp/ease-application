@@ -24,8 +24,4 @@ public class DiagramController {
         return this.diagramService.find(id);
     }
 
-    @GetMapping("/getAllContainingObjects")
-    public List<EObjectDto> getAllContainingObjects(@RequestParam Long id) {
-        return diagramService.getAllContainingObjects(id);
-    }
 }
