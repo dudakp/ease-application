@@ -6,6 +6,7 @@ import sk.fei.tp.ease.dto.domain.EDiagramDto;
 import sk.fei.tp.ease.dto.domain.EObjectWithPackageDto;
 import sk.fei.tp.ease.dto.domain.graph.ObjectRelationsGraphProjection;
 import sk.fei.tp.ease.dto.domain.graph.ObjectUsageGraphDto;
+import sk.fei.tp.ease.dto.domain.search.ConnectorFilterDataDto;
 import sk.fei.tp.ease.model.enums.ConnectorType;
 import sk.fei.tp.ease.repository.EConnectorRepository;
 import sk.fei.tp.ease.service.IDiagramService;
@@ -46,6 +47,11 @@ public class ObjectGraphService implements IObjectGraphService {
                 connectorRepository.findCompleteGraph(connectorType).stream(),
                 connectorRepository.findCompleteGraphWithPortConnections(connectorType).stream()
         ).collect(Collectors.toSet());
+    }
+
+    @Override
+    public List<ConnectorFilterDataDto> filterContents() {
+        return connectorRepository.findAllConnectorTypes();
     }
 
 }

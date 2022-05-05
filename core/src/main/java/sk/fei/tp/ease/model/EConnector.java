@@ -31,6 +31,9 @@ public class EConnector {
     @Enumerated(EnumType.STRING)
     private ConnectorType connectorType;
 
+    @Column(name = "Stereotype")
+    private String stereotype;
+
     @JoinColumn(name = "Start_Object_ID")
     @OneToOne
     private EObject startObject;

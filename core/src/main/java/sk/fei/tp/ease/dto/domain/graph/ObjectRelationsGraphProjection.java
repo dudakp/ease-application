@@ -12,4 +12,5 @@ public class ObjectRelationsGraphProjection {
     private final String endNode;
 
     private final ConnectorType edgeType;
+    private final String stereotype;
 }

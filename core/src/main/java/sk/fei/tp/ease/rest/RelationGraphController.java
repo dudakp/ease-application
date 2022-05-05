@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import sk.fei.tp.ease.dto.domain.graph.ObjectRelationsGraphProjection;
+import sk.fei.tp.ease.dto.domain.search.ConnectorFilterDataDto;
 import sk.fei.tp.ease.model.enums.ConnectorType;
 import sk.fei.tp.ease.service.IObjectGraphService;
 
@@ -30,4 +31,8 @@ public class RelationGraphController {
         return graphService.findCompleteGraph(depth, connectorType);
     }
 
+    @GetMapping("/filterContents")
+    public List<ConnectorFilterDataDto> getFilterData() {
+        return graphService.filterContents();
+    }
 }
