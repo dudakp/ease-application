@@ -34,21 +34,21 @@ public class ObjectRelationsGraphProjection {
     private static String generateColor(ObjectType ot) {
         switch (ot) {
             case Port:
-                return "0x498559";
+                return "#498559";
             case Text:
-                return "0x6babb3";
+                return "#6babb3";
             case Class:
-                return "0x#7b6bb3";
+                return "#7b6bb3";
             case Package:
-                return "0x#b3ab6b";
+                return "#b3ab6b";
             case Artifact:
-                return "0x#b3756b";
+                return "#b3756b";
             case Boundary:
-                return "0x#a66bb3";
+                return "#a66bb3";
             case Component:
-                return "0x#80e810";
+                return "#80e810";
             default:
-                return "0x#000000";
+                return "#000000";
         }
     }
 }
