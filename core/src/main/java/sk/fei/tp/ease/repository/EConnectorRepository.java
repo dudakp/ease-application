@@ -19,7 +19,9 @@ public interface EConnectorRepository extends JpaRepository<EConnector, Long> {
             " edge.startObject.id, edge.startObject.name," +
             " edge.endObject.id, edge.endObject.name," +
             " edge.connectorType," +
-            " edge.stereotype)" +
+            " edge.stereotype, " +
+            " edge.startObject, " +
+            " edge.endObject)" +
             " from EConnector edge " +
             "   where edge.startObject.id = :rootObjectId " +
             "       and edge.startObject.type <> 'Port' " +
@@ -30,7 +32,9 @@ public interface EConnectorRepository extends JpaRepository<EConnector, Long> {
             " edge.startObject.id, edge.startObject.name, " +
             " edge.endObject.id, edge.endObject.name, " +
             " edge.connectorType," +
-            " edge.stereotype)" +
+            " edge.stereotype, " +
+            " edge.startObject, " +
+            " edge.endObject)" +
             " from EConnector edge" +
             "   where (:connectorType is null or edge.connectorType = :connectorType) ")
     List<ObjectRelationsGraphProjection> findCompleteGraph(@Param("connectorType") ConnectorType connectorType);
@@ -39,7 +43,9 @@ public interface EConnectorRepository extends JpaRepository<EConnector, Long> {
             " edge.startObject.parent.id, edge.startObject.parent.name, " +
             " edge.endObject.parent.id, edge.endObject.parent.name, " +
             " edge.connectorType," +
-            " edge.stereotype)" +
+            " edge.stereotype," +
+            " edge.startObject, " +
+            " edge.endObject)" +
             " from EConnector edge" +
             "   where (:connectorType is null or edge.connectorType = :connectorType) ")
     List<ObjectRelationsGraphProjection> findCompleteGraphWithPortConnections(@Param("connectorType") ConnectorType connectorType);
