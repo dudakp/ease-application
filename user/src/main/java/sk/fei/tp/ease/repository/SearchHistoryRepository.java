@@ -9,6 +9,6 @@ import sk.fei.tp.ease.model.SearchHistory;
 
 public interface SearchHistoryRepository extends PagingAndSortingRepository <SearchHistory, Long> {
 
-    @Query("from SearchHistory sh where sh.user = :user")
+    @Query("from SearchHistory sh where sh.user = :user order by sh.time desc")
     Page<SearchHistory> findByUser(@Param("user") String user, Pageable pageable);
 }
