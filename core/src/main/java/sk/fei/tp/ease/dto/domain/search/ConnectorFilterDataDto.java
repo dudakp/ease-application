@@ -9,7 +9,7 @@ import java.util.Map;
 public class ConnectorFilterDataDto {
 
     public ConnectorFilterDataDto(ConnectorType connectorType, String stereotype) {
-        this.connectorType = Map.of(connectorType.name(), String.format("#%06X", (0xFFFFFF & connectorType.name().length() + 5000)));
+        this.connectorType = Map.of(connectorType.name(), String.format("#%06X", (0xFFFFFF & connectorType.name().length() * 2000)));
         this.stereotype = Map.of(stereotype == null ? "" : stereotype, "#FF0000");
     }
 
